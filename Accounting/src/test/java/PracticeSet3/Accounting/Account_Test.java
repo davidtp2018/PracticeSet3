@@ -1,9 +1,10 @@
 package PracticeSet3.Accounting;
 
+import static org.junit.Assert.*;
+
 public class Account_Test {
-	Account acct1 = new Account();
-	acct1.setId(1122);
-	acct1.setBalance(22000);
+	
+	Account act1 = new Account();
 	
 	
 }
