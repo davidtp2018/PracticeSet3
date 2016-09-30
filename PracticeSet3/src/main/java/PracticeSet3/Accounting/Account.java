@@ -1,4 +1,5 @@
 package PracticeSet3.Accounting;
+
 import java.util.Date;
 
 public class Account {
@@ -12,7 +13,7 @@ public class Account {
 		this.id = 0;
 		this.balance = 0;
 		this.annualInterestRate = 0;
-		this.dateCreated = dateCreated;
+		this.dateCreated = new java.util.Date();
 	}
 
 	public Account(int id, double balance) {
@@ -51,13 +52,28 @@ public class Account {
 	public double getMonthlyInterestRate() {
 		return (annualInterestRate / 12.0);
 	}
-	
-	public void withdraw(double amtwithdraw){
-		balance = balance - amtwithdraw; 
+
+	public double withdraw(double amtwithdraw) throws InsufficientFundsException {
+
+		try {
+			if (amtwithdraw <= balance) {
+				return balance = balance - amtwithdraw;
+			} else {
+				double shortAmt = amtwithdraw - balance;
+				throw new InsufficientFundsException(shortAmt);
+			}
+		} catch (InsufficientFundsException anexception) {
+			System.out.println("Sorry, You your account has insufficient funds by $" 
+				+ anexception.getAmount());
+		}
+
+		return balance;
+
 	}
-	
-	public void deposit(double depositamt){
+
+	public double deposit(double depositamt) {
 		balance = balance + depositamt;
+		return balance;
 	}
 
 }
