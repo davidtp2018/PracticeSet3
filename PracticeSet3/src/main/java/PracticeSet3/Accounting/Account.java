@@ -67,7 +67,7 @@ public class Account {
 			}
 		} catch (InsufficientFundsException anexception) {
 			System.out.println("Sorry, You your account has insufficient funds by $" 
-				+ anexception.getAmount());
+				+ anexception.getShortAmount());
 		}
 
 		return balance;

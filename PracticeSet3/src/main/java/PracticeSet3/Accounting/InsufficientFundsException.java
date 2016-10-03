@@ -10,7 +10,7 @@ public class InsufficientFundsException extends Exception {
 		this.amount = amount;
 	}
 
-	public double getAmount() {
+	public double getShortAmount() {
 		return amount;
 	}
 
