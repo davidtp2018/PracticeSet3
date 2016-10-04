@@ -4,14 +4,14 @@ import java.io.*;
 
 public class InsufficientFundsException extends Exception {
 
-	private double amount;
+	private double amountShort;
 
-	public InsufficientFundsException(double amount) {
-		this.amount = amount;
+	public InsufficientFundsException(double amountShort) {
+		this.amountShort = amountShort;
 	}
 
 	public double getShortAmount() {
-		return amount;
+		return amountShort;
 	}
 
 }
