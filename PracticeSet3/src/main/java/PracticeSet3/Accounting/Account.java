@@ -58,18 +58,13 @@ public class Account {
 
 	public double withdraw(double amtwithdraw) throws InsufficientFundsException {
 
-		try {
-			if (amtwithdraw <= balance) {
-				return balance = balance - amtwithdraw;
-			} else {
-				double shortAmt = amtwithdraw - balance;
-				throw new InsufficientFundsException(shortAmt);
-			}
-		} catch (InsufficientFundsException anexception) {
-			System.out.println("Sorry, You your account has insufficient funds by $" 
-				+ anexception.getShortAmount());
+		if (amtwithdraw <= balance) {
+			balance -= amtwithdraw;
+		} else {
+			double shortAmt = amtwithdraw - balance;
+			throw new InsufficientFundsException(shortAmt);
+
 		}
-		https://github.com/CISC181/Week1.git
 		return balance;
 
 	}

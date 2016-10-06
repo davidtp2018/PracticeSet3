@@ -8,10 +8,10 @@ public class InsufficientFundsException extends Exception {
 
 	public InsufficientFundsException(double amountShort) {
 		this.amountShort = amountShort;
+		System.out.printf("Sorry, You your account has insufficient funds by $%.2f",  amountShort);
 	}
-
-	public double getShortAmount() {
+	
+	public double getAmountShort(){
 		return amountShort;
 	}
-
 }

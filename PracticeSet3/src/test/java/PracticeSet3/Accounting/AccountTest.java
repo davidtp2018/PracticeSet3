@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class Account_Test {
+public class AccountTest {
 	
 
 	@Test
@@ -60,23 +60,15 @@ public class Account_Test {
 		System.out.println();
 	}
 
-	@Test
-	public void Account2() throws InsufficientFundsException {
+	@Test (expected=InsufficientFundsException.class)
+	public void InsufficientFundsException() throws PracticeSet3.Accounting.InsufficientFundsException {		
+		
 		Account account2 = new Account();
 		account2.setId(1122);
 		account2.setBalance(22000);
 		account2.setAnnualInterestRate(4.5);
-
-		double dActualInt = account2.withdraw(25000);
-		double dExpectInt = 22000;
-		assertEquals(dActualInt, dExpectInt, .001);
-
-		System.out.print("The balance of the account ID" + " " + account2.getId() + " " + "is" + " " + "$"
-			+ account2.getBalance() + " " + "and the month interest rate is" + " "
-			+ account2.getMonthlyInterestRate() + "% " + "and the" + " " + "account was created on" + " "
-			+ account2.getDateCreated());
-		System.out.println();
-
+		account2.withdraw(25000);
+		
 	}
 
 }
