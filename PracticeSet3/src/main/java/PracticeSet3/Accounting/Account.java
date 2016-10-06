@@ -1,5 +1,5 @@
 // Thomas Pennington 
-
+// Practice set 3
 package PracticeSet3.Accounting;
 
 import java.util.Date;
