@@ -6,7 +6,13 @@ import org.junit.Test;
 
 public class AccountTest {
 	
+	
+	@Test
+	public void test() {
+	assertTrue(1==1);
+	}
 
+	
 	@Test
 
 	public void TestAccount() {
