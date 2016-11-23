@@ -1,4 +1,4 @@
-// Thomas Pennington and 
+// Thomas Pennington 
 
 package PracticeSet3.Accounting;
 
